@@ -15,9 +15,9 @@
         - name: Show error
           debug:
             msg: "Unknown Package"
-        - name: Install nginx
+        - name: Install git
           yum:
-            name: nginx
+            name: git
             state: latest
 
       always:
