@@ -3,7 +3,7 @@
   hosts: web-server
   become: true
   vars_files:
-    - vars2.yaml 
+    - arjunvars2.yaml 
   tasks:
     - name: Show users
       debug:
