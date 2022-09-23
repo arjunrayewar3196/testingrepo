@@ -3,7 +3,7 @@
   become: true
   become_user: root
   vars:
-   src_path: /root/ansible
+   src_path: /root/ansible/index.html
    dest_path: /var/www/html
   tasks:
    - name: Install httpd
