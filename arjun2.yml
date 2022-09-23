@@ -1,0 +1,22 @@
+- name: Using Jinja2
+  hosts: web-server
+  become: yes
+  vars:
+    system_admin_email: arjun@gmail.com
+    #system_admin_phone: '1800 0000 0000'
+    users:
+      - arjun
+      - ansibleuser
+      - linux
+      - superuser
+      - ansible
+  tasks:
+    - name: Deploy motd
+      template:
+        dest: /etc/motd
+        src: motd.j2
+    - name: Deploy user list
+      template:
+        dest: /tmp/user_list
+        src: user_list.j2
+        
