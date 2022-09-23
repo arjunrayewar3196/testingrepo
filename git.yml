@@ -1,6 +1,14 @@
+
 ---
 - hosts: web-server
   become: true
+  gather_facts: no
+  vars: 
+  package_name: httpd
+  service_name: httpd
   tasks:
   - name: Install Package
-    yum: name=vim,git state=latest
+    yum: name= "{{ package_name }" state=present
+  - name: Start httpd service
+    service: name= "{ service_name }"" state=started
+
