@@ -1,5 +1,5 @@
 - name: Package Installation
-  hosts: nodes
+  hosts: web-server
   become: yes
   tasks:
     - block:
