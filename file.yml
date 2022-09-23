@@ -3,4 +3,4 @@
   become: true
   tasks:
   - name: creating the the file
-    file: path=/home/root/arjun.txt state=touch
+    file: name=arjun.txt state=touch
