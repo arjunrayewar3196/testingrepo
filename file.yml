@@ -1,0 +1,6 @@
+---
+- hosts: web-server
+  become: true
+  tasks:
+  - name: creating the the file
+    file: name=arjun.txt state=touch

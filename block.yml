@@ -1,0 +1,26 @@
+- name: Package Installation
+  hosts: web-server
+  become: yes
+  tasks:
+    - block:
+        - name: Show Message
+          debug: 
+            msg: "Trying httpd"
+
+        - name: Install Package
+          yum:
+            name: httpd-wrong
+            state: present
+      rescue:
+        - name: Show error
+          debug:
+            msg: "Unknown Package"
+        - name: Install git
+          yum:
+            name: git
+            state: latest
+
+      always:
+        - name: Message
+          debug:
+            msg: "Playbook Done"
