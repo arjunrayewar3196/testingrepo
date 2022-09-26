@@ -1,5 +1,5 @@
 - name: Package Installation
-  hosts: web-server
+  hosts: webserver1
   become: yes
   tasks:
     - block:
@@ -15,9 +15,9 @@
         - name: Show error
           debug:
             msg: "Unknown Package"
-        - name: Install git
+        - name: Install httpd
           yum:
-            name: git
+            name: httpd
             state: latest
 
       always:

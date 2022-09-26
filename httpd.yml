@@ -1,0 +1,9 @@
+---
+- hosts: webserver1
+  become: true
+  gather_facts: yes
+  vars: 
+   pkg_name: httpd
+  tasks:
+    - name: insl the httpd 
+      yum: name= "{{ pkg_name }}" state=present
