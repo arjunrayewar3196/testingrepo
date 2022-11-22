@@ -1,5 +1,6 @@
 ---
-- hosts: web-server
+- name: 'this playbook is to install the packages'
+  hosts: web-server
   become: true
   gather_facts: no
   vars: 
@@ -10,4 +11,5 @@
     yum: name= "{{ package_name }" state=present
   - name: Start httpd service
     service: name= "{ service_name }"" state=started
+...
 
