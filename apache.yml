@@ -11,5 +11,9 @@
     yum: name= "{{ package_name }" state=present
   - name: Start httpd service
     service: name= "{ service_name }"" state=started
+
+  - name: Install firewall Package
+    yum: name=firewall state=present
+  
 ...
 
